@@ -29,9 +29,9 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
 
 	//G4VPhysicalVolume *physbox = new G4PVPlacement (0,G4ThreeVector(0,0,0), subs, "physBOX", logicWorld, false, 0, true);
 
-    G4VSolid* MenOrb2 =    new G4Sphere("MenOrb2", 0.*m,1*m, 0.*deg, 360.*deg, 0.*deg, 360.*deg);
-    G4VSolid *box = new G4Trd("PIRAMIDA",0.3*m,4*m,0.3*m,4*m,4*m);
-    G4RotationMatrix identity;
+    	G4VSolid* MenOrb2 =    new G4Sphere("MenOrb2", 0.*m,1*m, 0.*deg, 360.*deg, 0.*deg, 360.*deg);
+    	G4VSolid *box = new G4Trd("PIRAMIDA",0.3*m,4*m,0.3*m,4*m,4*m);
+    	G4RotationMatrix identity;
 	G4ThreeVector positionMenOrb2(0,0,0);
 	//G4VSolid* unipyr = new G4UnionSolid("unipyr",box,MenOrb2,&identity, positionMenOrb2);
 	G4VSolid* Meniscus = new G4SubtractionSolid("Meniscus", box, MenOrb2,&identity, positionMenOrb2);
@@ -53,10 +53,10 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
 						0,
 						true);
 
-    G4LogicalVolume* logicEnv2 =                         
-    new G4LogicalVolume(Meniscus,            //its solid   //solidEvn2
-                        lime,             //its material
-                        "Meniscus2");         //its name
+   	G4LogicalVolume* logicEnv2 =                         
+    	new G4LogicalVolume(Meniscus,            //its solid   //solidEvn2
+                        	lime,             //its material
+                        	"Meniscus2");         //its name
 
                     
  	new G4PVPlacement(rotationMatrix,                       //no rotation
